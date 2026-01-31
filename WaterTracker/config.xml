@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ruthirsty.watertracker" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>喝水打卡</name>
+    <description>
+        健康饮水打卡应用 - 帮助您养成良好的饮水习惯
+    </description>
+    <author email="dev@ruthirsty.com" href="https://github.com">
+        RUthirsty Team
+    </author>
+    <content src="index.html" />
+
+    <!-- 访问权限配置 -->
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+    <!-- 全局配置 -->
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackgroundColor" value="0xff000000" />
+    <preference name="HideKeyboardFormAccessoryBar" value="false" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="Fullscreen" value="false" />
+
+    <!-- Android 平台配置 -->
+    <platform name="android">
+        <!-- Android 权限 -->
+        <preference name="android-minSdkVersion" value="24" />
+        <preference name="android-targetSdkVersion" value="34" />
+        <preference name="android-compileSdkVersion" value="34" />
+
+        <!-- 允许在 Android 上使用 -->
+        <allow-intent href="market:*" />
+
+        <!-- Android 特定配置 -->
+        <preference name="AndroidLaunchMode" value="singleTop" />
+        <preference name="AndroidInsecureFileModeEnabled" value="false" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
+        <preference name="GradlePluginKotlinCodeStyle" value="official" />
+        <preference name="AndroidXEnabled" value="true" />
+
+        <!-- 状态栏配置 -->
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarStyle" value="lightcontent" />
+
+        <!-- 启动画面配置 -->
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="FadeSplashScreenDuration" value="300" />
+        <preference name="SplashMaintainAspectRatio" value="true" />
+        <preference name="SplashShowOnlyFirstTime" value="false" />
+
+        <!-- 网络配置 -->
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+    </platform>
+
+    <!-- iOS 平台配置 (预留) -->
+    <platform name="ios">
+        <preference name="deployment-target" value="12.0" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

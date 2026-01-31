@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <title>喝水打卡 - Water Tracker</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="date-display" id="dateDisplay"></div>
+            <h1 class="app-title">
+                <span class="icon">💧</span>
+                喝水打卡系统
+            </h1>
+        </div>
+
+        <!-- Water Status Section -->
+        <div class="water-status">
+            <div class="status-card">
+                <div class="status-label">今日饮水量</div>
+                <div class="status-value">
+                    <span id="todayCount">0</span>
+                    <span class="unit">杯</span>
+                </div>
+            </div>
+            <div class="status-card">
+                <div class="status-label">目标完成度</div>
+                <div class="status-value">
+                    <span id="completionRate">0</span>
+                    <span class="unit">%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Check-in Button -->
+        <div class="checkin-container">
+            <button class="checkin-btn" id="checkinBtn">
+                <span class="btn-icon">✓</span>
+                <span class="btn-text">喝水打卡</span>
+            </button>
+        </div>
+
+        <!-- Records Section -->
+        <div class="records-section">
+            <div class="records-header">
+                <h2>今日记录</h2>
+                <button class="clear-btn" id="clearBtn">清空</button>
+            </div>
+            <div class="records-list" id="recordsList">
+                <div class="empty-state">暂无记录，开始喝水吧！</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
