@@ -49,15 +49,20 @@ jobs:
     - name: Override Gradle version
       working-directory: ./WaterTracker
       run: |
-        # Update gradle wrapper to use version 8.6
-        mkdir -p platforms/android/gradle/wrapper
-        cat > platforms/android/gradle/wrapper/gradle-wrapper.properties << 'EOF'
+        # Update gradle wrapper to use version 8.6 for compatibility
+        sed -i 's/gradle-9.3.0/gradle-8.6/g' platforms/android/gradle/wrapper/gradle-wrapper.properties || true
+        # If file doesn't exist, create it
+        if [ ! -f platforms/android/gradle/wrapper/gradle-wrapper.properties ]; then
+          mkdir -p platforms/android/gradle/wrapper
+          cat > platforms/android/gradle/wrapper/gradle-wrapper.properties << 'EOF'
         distributionBase=GRADLE_USER_HOME
         distributionPath=wrapper/dists
         zipStoreBase=GRADLE_USER_HOME
         zipStorePath=wrapper/dists
         distributionUrl=https\://services.gradle.org/distributions/gradle-8.6-all.zip
         EOF
+        fi
+        cat platforms/android/gradle/wrapper/gradle-wrapper.properties
 
     - name: Build Debug APK
       working-directory: ./WaterTracker
