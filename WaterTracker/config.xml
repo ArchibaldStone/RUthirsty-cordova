@@ -29,8 +29,8 @@
     <platform name="android">
         <!-- Android 权限 -->
         <preference name="android-minSdkVersion" value="24" />
-        <preference name="android-targetSdkVersion" value="34" />
-        <preference name="android-compileSdkVersion" value="34" />
+        <preference name="android-targetSdkVersion" value="33" />
+        <preference name="android-compileSdkVersion" value="33" />
 
         <!-- 允许在 Android 上使用 -->
         <allow-intent href="market:*" />
